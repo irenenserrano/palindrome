@@ -22,7 +22,25 @@ class PalindromeCheckerTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"Java","abc","spatula"})
-    void isPalindrom_False_NonPalindromes(String nonPalindromes) {
+    void isPalindrome_False_NonPalindromes(String nonPalindromes) {
         assertFalse(isPalindrome(nonPalindromes));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"Ama","Wow","reddER"})
+    void isPalindrome_True_DiffereingCase(String s) {
+        assertTrue(isPalindrome(s));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"my gym", "top spot", "step on no pets"})
+    void isPalindrome_True_HavingSpaces(String s) {
+        assertTrue(isPalindrome(s));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"WOW!!!","I did, did I?","?!"})
+    void isPalinedrome_True_HavingPunctuationAndSpaces(String s) {
+        assertTrue(isPalindrome(s));
     }
 }
